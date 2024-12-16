@@ -57,8 +57,8 @@
                     <button class="bg-purple-300 py-2 px-4 rounded font-bold" value="submit" name="submit">Submit</button>
                 </div>            
             </form>
-            
         </div>
+        
         <a href="{{route('user.index')}}" class="my-3 py-1 px-3 border border-black/30 hover:bg-neutral-200 transition-all cursor-pointer rounded-md">Go Back</a>
     </div>
 </body>

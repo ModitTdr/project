@@ -32,7 +32,7 @@
                     <td class="p-3">{{$users->id}}</td>
                     <td class="p-3">{{$users->email}}</td>
                     <td class="p-3">
-                        <a class="px-2 border bg-neutral-200 hover:bg-neutral-100 transition-all cursor-pointer rounded-sm">Edit</a>
+                        <a href="{{route('user.edit',[$users->id])}}" class="px-2 border bg-neutral-200 hover:bg-neutral-100 transition-all cursor-pointer rounded-sm">Edit</a>
                         <a href="{{route('userdel',[$users->id])}}" class="px-2 border bg-neutral-200 hover:bg-neutral-100 transition-all cursor-pointer rounded-sm">Delete</a>
                     </td>
                 </tr>

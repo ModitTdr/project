@@ -29,17 +29,18 @@ class UserController extends Controller
 
         User::create($validated);
         if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
-            // Authentication successful
             return back()->withSuccess('Registered Success');
         }else{
             return back()->withErrors('Registration Failed');
         }
 
     }
+    
     public function alluser(){
         $all = User::all();
         return view('viewuser',compact('all'));
     }
+    
     public function view(){
         $users = User::all();
         return view('viewuser',compact('users'));
@@ -47,5 +48,14 @@ class UserController extends Controller
     public function delete(User $id){
         $id->delete();
         return redirect()->back();  
+    }
+    public function edit(User $id){
+        return view('UserHandling.edit',compact('id'));
+    }
+    public function update(Request $request,$id){
+        $user = User::where('id',$id)->first();
+        $user->name = $request->name;
+        $user->save();
+        return back();
     }
 }
